@@ -1,0 +1,402 @@
+@import './variables.scss';
+ @mixin cardStyle{
+               
+    display: flex;
+        align-items: center;    
+    // height: 150px;
+    background-color: $card-bg;
+    width: 700px;
+    padding: 15px;
+    border-radius: 4px;
+    margin-bottom: 20px;
+ }
+ @mixin card-Image{
+    display: inline-block;
+                width: 32px;
+                height: 32px;
+                margin-right: 20px;
+ }
+ @mixin actionIndicaiton{
+    font-family: 'RubikMedium';
+    font-size: 16px;
+    margin-left: 5px;
+    display: inline-block;
+    font-weight: 500;
+ }
+  @mixin card-content{
+    padding-left: 20px;
+    width: 90%;}
+    @mixin user-name{
+        padding-left: 10px;
+        padding-right: 10px;
+        vertical-align: top;
+        display: inline-block;
+        margin-top: 3px;
+    }
+.container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'RubikRegular';
+    padding-bottom: 20px;
+    background: hsl(223, 19%, 93%);
+    width: 100%;
+    height: 100%;
+    .wrapper{
+        
+        .counterparenet{
+            // position: absolute;
+            background: rgb(233 236 241);
+            height: 90px;
+            width: 32px;
+            border-radius: 6px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center ;
+            flex-direction: column;
+            span{
+                display: block;
+            }
+        }
+        height: 100%;
+        padding-top: 20px;
+        // display: flex;
+        // justify-content: center;
+        
+        .card-parent{
+           @include cardStyle;  
+            .card-content{
+               @include card-content;
+                .user-name{
+                    @include user-name
+                }
+            }
+            .tym-span{
+                color: $text-bg;
+                vertical-align: top;
+                display: inline-block;
+                margin-top: 6px;
+                font-size: 12px;
+            }
+            
+            .image-span{
+                @include card-Image;
+                margin-right: 0px;
+                img{
+                    max-width: 100%;
+                    max-height: 100%;
+                }
+            }
+            p{
+                color: $text-bg;
+                margin-top: 5px;
+                line-height: 26px;
+            }
+            .reply-part,.edit-part,.delete-part{
+                float: right;
+                color: $reply-color;
+            }
+            .reply-part{
+               
+                span{
+                    @include actionIndicaiton;
+                    color: $moderate-blue;
+                }
+            }
+            .edit-part{
+                span{
+                    @include actionIndicaiton;
+                    color: $moderate-blue;
+                    font-family: 'RubikRegular';
+                }
+            }
+            .delete-part{
+                margin-right: 30px;
+                span{
+                    @include actionIndicaiton;
+                    color: $primaryredSoft;
+                    font-family: 'RubikRegular';
+                }
+            }
+           
+        }
+        
+      .reply-card
+      {
+        
+        margin-left: 70px;
+        @include cardStyle; 
+        width: 621px;
+        .card-content{
+            @include card-content;
+             .user-name{
+                 @include user-name
+             }
+             .mentionCommenter{
+                color: $moderate-blue;
+                font-weight: bold;
+                margin: 0 5px;
+                display: inline-block;
+                
+             }
+         }
+         
+    .tym-span{
+        color: $text-bg;
+        vertical-align: top;
+        display: inline-block;
+        margin-top: 6px;
+                font-size: 12px;
+    }
+    .image-span{
+        display: inline-block;
+        width: 32px;
+        height: 32px;
+    
+        img{
+            max-width: 100%;
+            max-height: 100%;
+        }
+    }
+    p{
+        color: $text-bg;
+        margin-top: 5px;
+        line-height: 26px;
+    }
+    .reply-part,.edit-part,.delete-part{
+        float: right;
+        color: $reply-color;
+    }
+    .reply-part{
+               
+        span{
+            @include actionIndicaiton;
+            color: $moderate-blue;
+        }
+    }
+    .edit-part{
+        span{
+            @include actionIndicaiton;
+            color: $moderate-blue;
+            font-family: 'RubikRegular';
+        }
+    }
+    .delete-part{
+        margin-right: 30px;
+        span{
+            @include actionIndicaiton;
+            color: $primaryredSoft;
+            font-family: 'RubikRegular';
+        }
+    }
+      }
+      .comment-upload{
+        background: $card-bg;
+        
+        
+        height: 120px;
+        
+        width: 700px;
+        padding: 15px;
+        border-radius: 4px;
+        margin-bottom: 20px;
+        .commentUserImage{
+            width: 32px;
+            height: 32px;
+            margin-right: 20px;
+            display: inline-block;
+            vertical-align: top;
+            img{
+                max-width: 100%;
+                max-height: 100%;
+            }
+        }
+        textarea{
+            height:calc(100% - 40px);
+            width: 75%;
+            border: 1px solid $moderate-blue;
+            padding: 10px;
+            resize: none;
+            border-radius: 7px;
+            font-family: 'RubikRegular';
+            
+            &:focus{
+                outline: none;
+                border: 1px solid #efefef;
+            }
+            &::placeholder{
+                color:#2c4152;
+                font-size: 14px;
+                font-family: 'RubikRegular'; /* Change font size */
+            }
+        }
+      }
+      .commentSendBtn{
+        vertical-align: top;
+        background: $moderate-blue;
+        margin-left: 20px;
+        color: $card-bg;
+        padding: 10px;
+        border-radius: 7px;
+        box-shadow: none;
+        border: 1px solid $moderate-blue;
+      }
+      .Updatebtn{
+        display: block;
+    color: hsl(0, 0%, 100%);
+    
+    margin-bottom: 5px;
+    padding: 5px;
+    width: 60px;
+    border-radius: 7px;
+    text-align: center;
+    box-shadow: none;
+    background-color: #26a65b;
+    border: none;
+      }
+      
+      .replyContainer{
+        position: relative;
+        &:before{
+            content: '';
+            width: 2px;
+            height: 100%;
+            background-color: hsl(239, 57%, 85%);;
+            position: absolute;
+            left: 25px
+        }
+    }
+    .editBox{
+        textarea{
+            width: 75%;
+            height: 70px;
+            margin-top: 10px;
+            resize:none;
+            border: 1px solid hsl(239, 57%, 85%);
+            border-radius: 7px;
+            padding-left: 10px;
+            padding-right: 10px;
+            font-family: 'RubikRegular';
+            line-height: 20px;
+        }
+        div{
+            margin-left: 10%;
+            display: inline-block;
+            vertical-align: top;
+            margin-top: 10px;
+        }
+    }
+    }
+}
+.parentReply{
+  @include cardStyle();
+  padding-bottom: 30px;
+  padding-top: 30px;
+  height: 70px;
+  .image-span{
+    @include card-Image;
+    img{
+        max-width: 100%;
+        max-height: 100%;
+    }
+}   
+  .textareaparent{
+    width: 100%;
+    display: flex;
+    height: 100%;
+    // margin-left: 50px;
+    line-height: 20px;
+    font-family: 'RubikRegular';
+    button{
+        display: block;
+        color: $card-bg;
+        margin-left: 40px;
+        margin-bottom: 5px;
+        padding: 5px;
+        width: 60px;
+        border-radius: 7px;
+        text-align: center;
+        box-shadow: none;
+        background: $moderate-blue;
+        border: none;
+    }
+    .cancel{
+        background: hsl(358, 79%, 66%);
+        color: $card-bg;  
+        padding: 5px;
+    }
+  
+  textarea{
+    height: 100%;
+     width: 80%;
+     border: 1px solid $moderate-blue;
+     border-radius: 7px;
+     font-family: 'RubikRegular';
+    resize: none;
+    &:focus{
+        outline: none;
+        border: 1px solid $moderate-blue;
+    }
+}
+}
+}
+.l-100{
+    margin-left: 70px;
+    width: 621px;
+}
+ @font-face {
+    font-family: 'RubikMedium';
+    src: url('./fonts/Rubik-Medium.ttf')format('truetype'),
+ }
+ @font-face {
+    font-family: 'RubikRegular';
+    src: url('./fonts/Rubik-Regular.ttf')format('truetype');
+    // src: url('./images/users/image-amyrobson.png')
+ }
+ .deleteDialog{
+    position: fixed;
+    background: rgba(0, 0, 0, 0.3);
+    height: 100vh;
+    top: 0;
+    left: 0;
+    right:0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    .dialogParnet{
+        h3{
+            color: rgb(50, 65, 82);
+            margin-left: 15px;
+
+        }
+        background: $card-bg;
+        padding: 15px;
+        width: 25%;
+        border-radius: 4px;
+        .content{
+            margin-left: 15px;
+            color: $text-bg;
+        }
+        button{
+            width: 100px;
+            border-radius: 4px;
+            box-shadow: none;
+            border: none;
+            padding: 5px;
+            color: $card-bg;
+            margin-bottom: 20px;
+            min-height: 35px;
+            // font-weight: bold;
+            font-family: 'RubikRegular';
+            font-size: 16px;
+            cursor: pointer;
+        }
+        .cancel-btn{
+            background: rgb(103, 114, 126);
+            margin-right: 20px;
+        }
+        .delete-confimartion{
+            background: $primaryredSoft;
+        }
+    }
+ }
